@@ -41,7 +41,8 @@ $app->singleton(
 	'App\Exceptions\Handler'
 );
 
-$environment = (getenv('XICI_ENV') ?: '') and $app->loadEnvironmentFrom('.env.'.$environment);
+$environment = 'local';
+$app->loadEnvironmentFrom('.env.'.$environment);
 
 /*
 |--------------------------------------------------------------------------
