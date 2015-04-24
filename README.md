@@ -4,4 +4,4 @@
 * chmod -R 777 storage
 * composer install
 * config the .env.local
-* php artision migrate
+* php artisan migrate
