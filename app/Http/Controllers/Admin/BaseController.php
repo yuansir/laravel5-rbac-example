@@ -1,13 +1,21 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php
 
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
+use App\Http\Requests;
+use Breadcrumbs;
 
-class BaseController extends Controller {
-    const PER_PAGE_NUM = 20;
+class BaseController extends Controller
+{
     public function __construct()
     {
+        $this->middleware('auth:admin');
         $this->middleware('auth.admin');
+
+        Breadcrumbs::register('dashboard', function ($breadcrumbs) {
+            $breadcrumbs->push('Dashboard', route('admin.home'));
+        });
     }
 }

@@ -1,34 +1,29 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php
 
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers\Admin;
 
-class HomeController extends Controller {
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
-    /*
-    |--------------------------------------------------------------------------
-    | Home Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller renders your application's "dashboard" for users that
-    | are authenticated. Of course, you are free to change or remove the
-    | controller as you wish. It is just here to get your app started!
-    |
-    */
-
+class HomeController extends BaseController
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
-        $this->middleware('auth.admin');
+        parent::__construct();
     }
-
 
     /**
-     * Show the application dashboard to the user.
+     * Show the application dashboard.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.index');
+        return view('admin.home');
     }
-
 }

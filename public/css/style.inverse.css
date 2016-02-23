@@ -1,0 +1,183 @@
+body {
+  background: #fff;
+}
+
+/*** HEADER ***/
+
+.logopanel,
+.headerbar {
+  background: #1d2939;
+  border-bottom: 1px solid #1d2939;
+}
+
+.logopanel h1 {
+  color: #fff;
+}
+
+.headerbar {
+  border-color: rgba(255,255,255,0.05);
+}
+
+.menutoggle {
+  border-color: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+.menutoggle:hover {
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+.headerbar .searchform input {
+  background: none;
+  border-color: rgba(255,255,255,0.05);
+}
+
+.headermenu > li {
+  border-color: rgba(255,255,255,0.05);
+}
+
+.headermenu .tp-icon,
+.headermenu .dropdown-toggle {
+  background: none;
+}
+
+.headermenu .tp-icon {
+  color: rgba(255,255,255,0.5);
+}
+
+.headermenu .chat-icon {
+  border: 0;
+}
+
+.headermenu .dropdown-menu {
+  margin-top: 1px;
+}
+
+.headermenu .dropdown-toggle:hover,
+.headermenu .dropdown-toggle:focus,
+.headermenu .dropdown-toggle:active,
+.headermenu .dropdown-toggle.active,
+.headermenu .open .dropdown-toggle.dropdown-toggle {
+   background: rgba(0,0,0,0.1);
+   color: rgba(255,255,255,0.8);
+}
+
+.dropdown-menu-head .title {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: #eee;
+  border-top: 0;
+}
+
+.headermenu .dropdown-menu:after {
+  border-bottom-color: #fff;
+}
+
+.headermenu .dropdown-menu-usermenu {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+.leftpanel-collapsed .headerbar {
+  border-left: 0;
+  margin-left: -52px;
+}
+
+
+/*** LEFT PANEL ***/
+
+.nav-bracket > li > a {
+  color: #333;  
+}
+
+.nav-bracket > li.active > a {
+  -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-bracket > li > a:hover,
+.nav-bracket > li > a:active,
+.nav-bracket > li.nav-active > a {
+  background-color: #eee;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.nav-bracket > li.nav-parent > a:hover {
+   background-color: #eee; 
+}
+
+.infosummary .datainfo h4 {
+  color: #333;
+}
+
+.infosummary li,
+.infosummary ul {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.leftpanel-collapsed .nav-bracket li.nav-hover ul {
+  background-color: #fff;
+}
+
+.leftpanel-collapsed .nav-bracket li a span {
+  background: #eee;
+}
+
+.nav-bracket > li.nav-parent.active > a,
+.nav-bracket > li.nav-active.active > a,
+.nav-bracket > li.nav-active.active > a:hover {
+  background-color: #1CAF9A; 
+}
+
+/*** MAIN PANEL ***/
+
+.pageheader,
+.contentpanel {
+  border-left: 1px solid #e7e7e7;
+}
+
+
+/*** RIGHT PANEL ***/
+
+.rightpanel .nav-tabs {
+  background: #e4e7ea;
+}
+
+.rightpanel .nav-tabs > li > a {
+  color: rgba(0,0,0,0.5);
+}
+
+.rightpanel .nav-tabs > .active > a,
+.rightpanel .nav-tabs > .active > a:hover,
+.rightpanel .nav-tabs > .active > a:focus {
+  background-color: #fff;
+  color: #333;
+}
+
+.chatuserlist .online .media-body strong {
+  color: #1CAF9A;
+}
+
+/*** HORIZONTAL MENU ***/
+
+.headerbar .navhor-bracket > li > a {
+  color: #ccc;
+}
+
+.headerbar .logopanel {
+  border-right: 0;
+}
+
+.headerbar .navhor-bracket > li > a {
+  padding: 15px 15px 13px 15px;
+}
+
+.headerbar .navhor-bracket > li .dropdown-menu {
+  border-top: 0;
+}
+

@@ -1,73 +1,40 @@
-<?php namespace App\Http\Middleware;
+<?php
 
-use Auth;
+namespace App\Http\Middleware;
+
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
-use Route;
-use URL;
+use Zizaco\Entrust\EntrustFacade as Entrust;
+use Route,URL,Auth;
 
-class AuthenticateAdmin {
-
-    /**
-     * The Guard implementation.
-     *
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * Create a new filter instance.
-     *
-     * @param  Guard $auth
-     * @return void
-     */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
-    }
-
+class AuthenticateAdmin
+{
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure $next
+     * @param  string|null $guard
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard = null)
     {
+        if(Auth::guard('admin')->user()->is_super){
+            return $next($request);
+        }
+
         $previousUrl = URL::previous();
-        if ($this->auth->guest()) {
-            if ($request->ajax()) {
-                return response()->json(
-                    [
-                        'status' => 0,
-                        'code' => 401,
-                        'message' => '没有权限操作'
-                    ]
-                );
-            }
-            else {
-                return redirect()->guest('admin/auth/login');
+        if(!Auth::guard('admin')->user()->can(Route::currentRouteName())) {
+            if($request->ajax() && ($request->getMethod() != 'GET')) {
+                return response()->json([
+                    'status' => -1,
+                    'code' => 403,
+                    'msg' => '您没有权限执行此操作'
+                ]);
+            } else {
+                return view('admin.errors.403', compact('previousUrl'));
             }
         }
-
-        if (!Auth::user()->can(Route::currentRouteName())) {
-            if ($request->ajax()) {
-                return response()->json(
-                    [
-                        'status' => 0,
-                        'code' => 401,
-                        'message' => '没有权限操作'
-                    ]
-                );
-            }
-            else {
-                return view('admin.errors.401', compact('previousUrl'));
-            }
-        }
-
 
         return $next($request);
     }
-
 }

@@ -1,0 +1,13 @@
+body, h1, h2, h3, h4, h5, .subtitle, .gen-list li .name, .table th, strong,
+input, select, textarea {
+  font-family: 'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif !important;
+}
+
+.subtitle, .gen-list li .name, .table th, .panel-alt .panel-title, strong
+.widget-messaging .sender, strong, .blog-title {
+  font-weight: bold;
+}
+
+.form-control {
+  padding: 9px 10px 8.5px;
+}

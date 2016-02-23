@@ -1,11 +1,13 @@
-<?php namespace App\Http\Requests\Admin;
+<?php
+
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Validator;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\Validation\Validator;
+use Toastr;
 
-abstract class Request extends FormRequest {
-
+abstract class Request extends FormRequest
+{
     public function authorize()
     {
         return true;
@@ -13,13 +15,7 @@ abstract class Request extends FormRequest {
 
     protected function formatErrors(Validator $validator)
     {
-        Session::flash('am-alert',
-            [
-                'type' => 'warning',
-                'data' => array_values($validator->errors()->all())
-            ]
-        );
+        Toastr::error(implode('<br>',array_values($validator->errors()->all())));
         return $validator->errors()->all();
     }
-
 }
