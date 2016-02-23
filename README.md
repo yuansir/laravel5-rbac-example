@@ -24,3 +24,4 @@
 - 配置 **.local.env** 中数据库连接信息
 - 执行 `composer php artisan db:seed`
 - 执行 `php artisan serve`
+- 默认后台账号:admin@admin.com 密码:admin
