@@ -20,8 +20,9 @@
 
 ## 安装
 
-- [像Laravel安装步骤一样](https://laravel.com/docs/5.2#installation)
+- git clone 到本地
+- 执行 `composer install`
 - 配置 **.local.env** 中数据库连接信息
-- 执行 `composer php artisan db:seed`
+- 执行 `php artisan db:seed`
 - 执行 `php artisan serve`
 - 默认后台账号:admin@admin.com 密码:admin
