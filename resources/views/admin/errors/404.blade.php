@@ -22,9 +22,9 @@
 <body class="notfound">
 
 <!-- Preloader -->
-<div id="preloader">
+<!-- <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
-</div>
+</div> -->
 
 <section>
 

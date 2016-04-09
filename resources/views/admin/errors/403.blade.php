@@ -27,9 +27,9 @@
 <body class="notfound" style="overflow: visible;">
 
 <!-- Preloader -->
-<div id="preloader" style="display: none;">
+<!-- <div id="preloader" style="display: none;">
     <div id="status" style="display: none;"><i class="fa fa-spinner fa-spin"></i></div>
-</div>
+</div> -->
 
 <section>
 
