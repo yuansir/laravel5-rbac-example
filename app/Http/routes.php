@@ -38,13 +38,13 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Admin', 'prefix' => 'admi
 
     Route::get('/home', ['as' => 'admin.home', 'uses' => 'HomeController@index']);
     Route::resource('admin_user', 'AdminUserController');
-    Route::delete('admin/admin_user/destoryall',['as'=>'admin.admin_user.destory.all','uses'=>'AdminUserController@destoryAll']);
+    Route::post('admin_user/destroyall',['as'=>'admin.admin_user.destroy.all','uses'=>'AdminUserController@destroyAll']);
     Route::resource('role', 'RoleController');
-    Route::delete('admin/role/destoryall',['as'=>'admin.role.destory.all','uses'=>'RoleController@destoryAll']);
+    Route::post('role/destroyall',['as'=>'admin.role.destroy.all','uses'=>'RoleController@destroyAll']);
     Route::get('role/{id}/permissions',['as'=>'admin.role.permissions','uses'=>'RoleController@permissions']);
     Route::post('role/{id}/permissions',['as'=>'admin.role.permissions','uses'=>'RoleController@storePermissions']);
     Route::resource('permission', 'PermissionController');
-    Route::delete('admin/permission/destoryall',['as'=>'admin.permission.destory.all','uses'=>'PermissionController@destoryAll']);
+    Route::post('permission/destroyall',['as'=>'admin.permission.destroy.all','uses'=>'PermissionController@destroyAll']);
     Route::resource('blog', 'BlogController');
 });
 

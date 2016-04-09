@@ -71,7 +71,9 @@ var Rbac = window.Rbac || {};
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true
             }, function () {
-                params.type = 'DELETE'
+                if (params.type == undefined) {
+                    params.type = 'DELETE';
+                }
                 _this.request(params);
             });
         },
@@ -96,6 +98,7 @@ var Rbac = window.Rbac || {};
                 return false;
             }
             params.data = {ids: ids};
+            params.type = 'POST';
             this.delete(params);
         }
     };

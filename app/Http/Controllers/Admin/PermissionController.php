@@ -141,7 +141,7 @@ class PermissionController extends BaseController
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destoryAll(Request $request)
+    public function destroyAll(Request $request)
     {
         if(!($ids = $request->get('ids', []))) {
             return response()->json(['status' => 0, 'msg' => '请求参数错误']);

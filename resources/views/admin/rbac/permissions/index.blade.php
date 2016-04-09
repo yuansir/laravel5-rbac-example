@@ -23,7 +23,7 @@
                                    data-toggle="tooltip" data-original-title="新增"><i
                                             class="glyphicon glyphicon-plus"></i></a>
                                 <a class="btn btn-white tooltips deleteall" data-toggle="tooltip"
-                                   data-original-title="删除" data-href="{{ route('admin.permission.destory.all') }}"><i
+                                   data-original-title="删除" data-href="{{ route('admin.permission.destroy.all') }}"><i
                                             class="glyphicon glyphicon-trash"></i></a>
                             </div>
                         </div><!-- pull-right -->
