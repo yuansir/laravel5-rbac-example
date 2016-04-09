@@ -11,7 +11,6 @@ class BaseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin');
         $this->middleware('auth.admin');
 
         Breadcrumbs::register('dashboard', function ($breadcrumbs) {
